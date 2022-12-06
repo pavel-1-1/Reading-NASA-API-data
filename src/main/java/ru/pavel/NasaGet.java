@@ -37,6 +37,8 @@ public class NasaGet {
         return url;
     }
 
+    public String getExplanation() {return explanation;}
+
     @Override
     public String toString() {
         return "NasaGet{" +

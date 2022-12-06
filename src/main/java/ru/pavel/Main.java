@@ -23,10 +23,12 @@ public class Main {
     public static void main(String[] args) throws IOException {
         String url = "https://api.nasa.gov/planetary/apod?api_key=5elUpzVP9RDqcdiOlRUpggwyXEzZalt6MJGgPQp9";
         request = new HttpGet(url);
+        String imageOut = "C:\\Users\\Laku\\Desktop\\image.jpg";
 
         NasaGet nasaGet = getContent();
-        System.out.println(nasaGet.toString());
-        File file = new File("image.jpg");
+        System.out.printf("высокое качество: %s\nнизкое качество: %s\n" +
+                "описание: %s\n", nasaGet.getHdurl(), nasaGet.getUrl(), nasaGet.getExplanation());
+        File file = new File(imageOut);
         file.createNewFile();
         InputStream inputStream = new URL(nasaGet.getHdurl()).openStream();
         Files.copy(inputStream, Paths.get(file.getAbsolutePath()), StandardCopyOption.REPLACE_EXISTING);

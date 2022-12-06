@@ -6,6 +6,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="Reading-NASA-API-data" />
         <module name="Reading_NASA_API_data" />
       </profile>
     </annotationProcessing>
