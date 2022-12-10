@@ -3,6 +3,7 @@ package ru.pavel;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class NasaGet {
+    private String copyright;
     private String date;
     private String explanation;
     private String hdurl;
@@ -12,6 +13,7 @@ public class NasaGet {
     private String url;
 
     public NasaGet(
+            @JsonProperty("copyright") String copyright,
             @JsonProperty("date") String date,
             @JsonProperty("explanation") String explanation,
             @JsonProperty("hdurl") String hdurl,
@@ -20,6 +22,7 @@ public class NasaGet {
             @JsonProperty("title") String title,
             @JsonProperty("url") String url
     ) {
+        this.copyright = copyright;
         this.date = date;
         this.explanation = explanation;
         this.hdurl = hdurl;
